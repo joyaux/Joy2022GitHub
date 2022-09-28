@@ -1,0 +1,41 @@
+body 
+{
+    
+    color: #342009;
+    font-size: 1em;
+    background-image: url("Images/Bibliotheque.jpg");
+    background-size: cover;
+}
+
+a /* Liens par défaut (non survolés) */
+{
+    text-decoration: none;
+   color: #FB8604;
+   font-style: normal;
+}
+
+a:hover /* Apparence au survol des liens */
+{
+    text-decoration: underline;
+   color: #FDB768;
+}
+a:visited
+{
+    text-decoration: underline;
+    color: #975102;
+}
+
+.WelcomePage
+{
+    display: table; /* keep the background color wrapped tight */
+    background-color: #FEEEDC;
+    color: #342009;
+    padding: 10px;
+    text-align: center;
+    margin: 0px auto 0px auto;
+}
+
+.Livres
+{
+    background-color: #FEEDC;
+}

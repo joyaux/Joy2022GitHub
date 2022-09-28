@@ -1,0 +1,17 @@
+SELECT <attributs> nom, prenom, *
+FROM <table>		etudiants
+[WHERE <condition>] ; 
+
+<attribut>  =   VALUE
+			<
+			>
+			<=
+			>=
+			<>
+
+
+			add notes for students*
+
+
+			mysql -u root
+			<nameoffile.sql>

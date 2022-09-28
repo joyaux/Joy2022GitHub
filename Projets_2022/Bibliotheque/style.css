@@ -1,0 +1,131 @@
+/* Entire website formatting */
+body
+{
+	background-color: #FEEEDC;
+
+}
+
+h1
+{
+	font-size: xx-large;
+	text-align: center;
+	color: #342009;
+}
+
+h2
+{
+	text-align: center;
+}
+
+a /* Liens par défaut (non survolés) */
+{
+    text-decoration: none;
+   color: #FB8604;
+   font-style: normal;
+}
+
+a:hover /* Apparence au survol des liens */
+{
+    text-decoration: underline;
+   color: #FDB768;
+}
+
+a:visited /* links visited */
+{
+    text-decoration: underline;
+    color: #975102;
+}
+
+
+body.WelcomePage
+{
+	background-image: url("Images/Bibliotheque.jpg");
+    background-size: cover;
+}
+
+.welcomenav
+{
+	font-size: 1.3em;
+
+}
+
+.welcomebanner
+{
+	list-style-type: none;
+	display: flex;
+	background-color: #FEEEDC;
+	justify-content: space-around;
+}
+
+
+.homepage
+{
+	width: 30%;
+	min-height: 400px;
+	padding: 20px;
+	margin: 20% auto 0 auto;
+	text-align: justify;
+	border: 1px solid #342009;
+	color: #342009;
+	background-color: #FEEEDC;
+	overflow: auto;
+	word-wrap: break-word;
+
+}
+
+
+
+.imagelibrary
+{
+text-align: center;
+}
+
+.intro
+{
+	text-align: center;
+}
+
+.book
+{
+
+	margin: auto;
+	border: 1px solid #342009;
+	border-radius: 10px;
+	text-align: justify;
+	padding: 10px;
+	overflow: auto;
+	word-wrap: break-word;
+	margin-bottom: 10px;
+}
+
+.Authors
+{
+	
+	min-height: 300px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 20px;
+	color: #342009;
+}
+
+.Auteur
+{	
+
+	width: 25%;
+	margin: 30px;
+	border: 1px solid #342009;
+	border-radius: 10px;
+	text-align: justify;
+	padding: 20px;
+	overflow: auto;
+	word-wrap: break-word;
+}
+
+.ratings
+{
+	list-style-type: none;
+}
+
+ul{
+	list-style-type: none;
+}

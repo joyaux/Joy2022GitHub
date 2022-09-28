@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructeur adventure</title>
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+
+<?php
+$constructors = file_get_contents('https://filrouge.uha4point0.fr/V2/car/constructeurs');
+$constructors = json_decode($constructors, true);
+?>
+<body>
+    <div class="logo">
+        <a href="index.php"><img src="./img/covering-carrosserie_1920x734.png" height="100px" width="250px"></a>
+        <a href="./index.php">Découvrir les marques</a>
+    </div>
+
+    <div class="container">
+        <?php
+        foreach ($constructors as $constructor) { ?>
+            <div class="card">
+                    <div class="container-img">
+                    <div class="card-image"><img class="image" src="img/mechanic.jpg" alt="Fondateur renault" height="200px"/></div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div>
+                            <p><strong>Fondateurs : </strong><?= htmlspecialchars($constructor["fondateur"])?></p>
+                        </div>
+                        <div>
+                            <p><strong>Création :</strong><?= htmlspecialchars($constructor["creation"])?> </p>
+                        </div>
+            
+                        <div class="card-title">
+                            <h3><a href="cars.php?id=<?= htmlspecialchars($constructor["id"])?>&amp;constructeur=<?=htmlspecialchars($constructor["nom"])?>"><?= htmlspecialchars($constructor["nom"])?></a></h3>
+                            <h4> <?= htmlspecialchars($constructor["pays"])?></h4>
+                        </div>
+                        <div class="usines">
+                            <ul>
+                                <p><strong>Les usines :</strong></p> 
+                            <?php
+                            foreach ($constructor["usines"] as $usines) { ?>
+                            <li><?=htmlspecialchars($usines)?></li> 
+                            <?php } ?>
+
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        <?php } ?>
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+body
+{
+	background-color: #FEEEDC;
+
+}
+
+h1
+{
+	font-size: xx-large;
+	text-align: center;
+	color: #342009;
+}
+nav
+{
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+}
+
+.welcomebanner
+{
+	list-style-type: none;
+	display: flex;
+	text-align: right;
+    margin-right: 15px;
+    font-size: medium;
+}
+
+
+.intro
+{
+	text-align: center;
+}
+.booklist
+{
+	display: flex;
+	flex-wrap: wrap;
+
+}
+
+.book
+{
+	width: 50%;
+	margin: auto;
+	border: 1px solid #342009;
+	border-radius: 10px;
+	text-align: justify;
+	padding: 20px;
+	overflow: auto;
+	margin-bottom: 10px;
+
+}
+a /* Liens par défaut (non survolés) */
+{
+    text-decoration: none;
+   color: #FB8604;
+   font-style: normal;
+}
+
+a:hover /* Apparence au survol des liens */
+{
+    text-decoration: underline;
+   color: #FDB768;
+}
+a:visited
+{
+    text-decoration: underline;
+    color: #975102;
+}
+
+.imagelibrary
+{
+	text-align: center;
+}

@@ -1,0 +1,87 @@
+NOTES on RESPONSIVE websites
+
+<link rel="stylesheet" media="screen and (max-width: 1280px)" href="petite_resolution.css" />
+
+
+
+Au final, votre code HTML pourrait proposer plusieurs fichiers CSS : un par défaut (qui est chargé dans tous les cas) et un ou deux autres qui seront chargés en supplément, uniquement si la règle correspondante s'applique.
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" /> <!-- Pour tout le monde -->
+        <link rel="stylesheet" media="screen and (max-width: 1280px)" href="petite_resolution.css" /> <!-- Pour ceux qui ont une résolution inférieure à 1280px -->
+        <title>Media queries</title>
+    </head>
+
+
+
+    Une autre technique, que je préfère personnellement pour des raisons pratiques, consiste à écrire ces règles dans le même fichier CSS que d'habitude.
+Dans ce cas, on écrit la règle dans le fichier .css  comme ceci :
+-Write the rules in the same CSS file as usual
+
+
+CSS:
+
+@media screen and (max-width: 1280px)
+{
+    /* Rédigez vos propriétés CSS ici */
+}
+
+
+Il existe de nombreuses règles permettant de construire des media queries. Je vous présente ici les principales :
+
+color  : gestion de la couleur (en bits/pixel) ;
+
+height  : hauteur de la zone d'affichage (fenêtre) ;
+
+width  : largeur de la zone d'affichage (fenêtre) ;
+
+device-height  : hauteur du périphérique ;
+
+device-width  : largeur du périphérique ;
+
+orientation  : orientation du périphérique (portrait ou paysage) ;
+
+media  : type d'écran de sortie. Quelques-unes des valeurs possibles :
+
+screen  : écran « classique »,
+
+handheld  : périphérique mobile,
+
+print  : impression,
+
+tv  : télévision,
+
+projection  : projecteur,
+
+all  : tous les types d'écrans.
+
+On peut rajouter le préfixe min-  ou max-  devant la plupart de ces règles. Ainsi, min-width  signifie « largeur minimale », max-height  « hauteur maximale », etc.
+La différence entre width  et device-width  se perçoit surtout sur les navigateurs mobiles des smartphones ; nous en reparlerons plus loin.
+
+
+
+
+
+What that looks like in css:
+
+/* Sur les écrans, quand la largeur de la fenêtre fait au maximum 1280px */
+@media screen and (max-width: 1280px)
+
+/* Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 1024px et 1280px */
+@media all and (min-width: 1024px) and (max-width: 1280px)
+
+/* Sur les téléviseurs */
+@media tv
+
+/* Sur tous types d'écrans orientés verticalement */
+@media all and (orientation: portrait)
+
+
+
+
+
+

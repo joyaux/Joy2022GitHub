@@ -1,0 +1,38 @@
+Terminal notes
+
+dir - - from MS dos, directory - tells where computer is reading from - in general, home to begin with
+
+cd - go to a location
+cd lampp/ - go to lampp - 
+
+cd / -- tells computer to go to root directory
+
+cd .. -- tells computer to go back one step - go one level above
+
+cd /home -- go to home directory
+
+ls  - lists directory
+pwd -- tells you where you are - what directory you're in, full pathway
+
+cp source path/filename (then) target folder- ex: sudo cp /Documents/2022/PHPcourse/firsttry.php /opt/lampp/htdocs/tests/
+NOTE- in above example i need sudo commmand bc my target folder is in restricted area (root) - needs password
+
+sudo - instruction that says for this command you are root
+
+cd ~ -- goes to home
+cd / -- goes back completely to computer
+
+gedit -- stands for gnome edit - looks like - text editor
+
+gedit info.php -- to open file using gedit, type gedit and name of file - if already in the folder that contains that file, or type file path
+
+In order to access restricted files - use sudo - BE CAREFUL
+
+/opt/lampp/logs/php_error_log -- this is where the php log errors are found
+
+If you open a restricted php file *for instance - in gedit without putting sudo, it will open the file in read-only. If you modify the file, it won't let you save changes - you don't have permission.
+
+
+cp Documents/2022/PHPcourse/access.php D - this copied the file access.php and pasted it in the home folder, and named the text doc D :)
+
+

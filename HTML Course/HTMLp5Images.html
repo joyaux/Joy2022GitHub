@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Inserez une image</title>
+    </head>
+<!-- I am condensing all the notes on HTML images  into  one document if I need to refer back - so below are examples on images, including src - source, and alt - alternative text to describe a picture  -->
+    <body>
+        <p>
+    Voici une photo que j'ai prise lors de mes dernières vacances à la montagne :<br />
+    <img src="images/montagne.jpg" alt="Photo de montagne" />
+</p>
+
+<!-- You can insert an infobulle - facultatif, by using title - appears when you hover over link-->
+<p>
+    Voici une photo que j'ai prise lors de mes dernières vacances à la montagne :<br />
+    <img src="images/montagne.jpg" alt="Photo de montagne" title="C'est beau les Alpes quand même !" />
+</p>
+<!--Note important about names of files for images - no spaces and no special characters or accents in name of image or file folder-->
+
+<!-- Mini - you can go to ResizePixel to mini a pic, then link to the full size version. You put link to mini on page to display, then you can click on pic to make full size -->
+<p>
+    Vous souhaitez voir l'image dans sa taille d'origine ? Cliquez dessus !<br />
+    <a href="img/montagne.jpg"><img src="img/montagne_mini.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" /></a>
+</p>
+
+<!-- Figures - use this instead of img when your image brings info to text and is important for text - also allows to collect all figures on a page and put them in a table; and figures can be outside of paragraphs -->
+<figure>
+    <img src="images/blocnotes.png" alt="Bloc-Notes" />
+</figure>
+
+<!-- figcaption lets you put the description of the figure -->
+
+<figure>
+    <img src="images/blocnotes.png" alt="Bloc-Notes" />
+    <figcaption>Le logiciel Bloc-Notes</figcaption>
+</figure>
+
+<!-- - outside of paragraph -->
+<p>Connaissez-vous le logiciel Bloc-Notes ? On peut faire des sites web avec !</p>
+
+<figure>
+    <img src="images/blocnotes.png" alt="Bloc-Notes" />
+    <figcaption>Le logiciel Bloc-Notes</figcaption>
+</figure>
+
+
+<figure>
+    <img src="images/internetexplorer.png" alt="Logo Internet Explorer" />
+    <img src="images/firefox.png" alt="Logo Mozilla Firefox" />
+    <img src="images/chrome.png" alt="Logo Google Chrome" />
+    <figcaption>Logos des différents navigateurs</figcaption>
+</figure>
+

@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+	
+	<head>
+	
+		<meta charset="utf-8" >
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="style.css" />
+		<title>Livres</title>
+	
+	</head>
+	
+	<?php
+		$livres = file_get_contents('https://filrouge.uha4point0.fr/V2/livres/livres');
+		$livres = json_decode($livres, true);
+	?>
+
+		<body> 
+		
+		<div class="welcomenav">
+			<nav>
+                <ul class="welcomebanner">
+                	<li><a href="PagedAccueilBibliotheque1.html" target="_blank">Accueil</a></li>
+                    <li><a href="Livres.html" target="_blank">Livres</a></li>
+                    <li><a href="Auteurs.html" target="_blank">Auteurs</a></li>
+                    <li><a href="RatingsPage.html" target="_blank">Page d'évaluation</a></li>
+                </ul>
+            </nav>
+
+        </div>
+			<div class="imagelibrary">
+				<img src="Images/AustriaGoettweigAbbey.jpg" alt="Photo de la bibliothèque de l'abbaye de Gottweig en Autriche" title="Abbaye de Goettweig en Autriche" />
+			</div>
+
+				<h1 id="pagetop">Livres</h1>
+				
+				<p class="intro">
+					Voici les livres disponible dans ma bibliothèque.
+    			</p>
+
+    		<div class="booklist">
+    			<div class="book">
+    				<?php
+        			foreach ($livres as $livre) { 
+        				if (htmlspecialschars($livre["titre"]) == $livre_id) {
+        					$boolean = true;
+        				}
+        			?>
+    				
+    				<h2 id="LePereGoriot"><a href="Auteurs/Balzac.html#LePereGoriot" target="_blank"><em>Le Père Goriot</em><?= htmlspecialchars($livre["titre"])?></a></h2>
+
+    					<a href="Livres/Covers/LePereGoriot.jpg" target="_blank"><img src="Livres/Covers/LePereGoriot.jpg" alt="couverture du livre" title="Clique pour agrandir" width="150" height="150"></a>
+    		
+    					<p>par <a href="auteurs.php?id=<?= htmlspecialchars($auteur["id"])?>&amp;auteur=<?=htmlspecialchars($auteur["nom"])?>"><?= htmlspecialchars($auteur["nom"])?><strong>Balzac</strong><?= htmlspecialchars($auteur["prenom"])?></a></p>
+
+ <h3><a href="cars.php?id=<?= htmlspecialchars($constructor["id"])?>&amp;constructeur=<?=htmlspecialchars($constructor["nom"])?>"><?= htmlspecialchars($constructor["nom"])?></a></h3>
+                            <h4> <?= htmlspecialchars($constructor["pays"])?></h4>
+
+
+
+
+
+
+
+
+    					<p>Pages: <?= htmlspecialchars($livre["pages"])?></p>
+    			
+						<p>Synopsis: <?= htmlspecialchars($livre["synopsis"])?></p>
+    						
+    					<p>
+    				
+    					</p>
+    						
+    					<p>Prix: <?= htmlspecialchars($livre["prix"])?>€</p>
+    						
+    					<p>Année de parution: <?= htmlspecialchars($livre["sorti"])?></p>
+    						
+    					<a href="RatingsPage.html" target="_blank">Donne ton avis sur ce livre/ Rate this book</a>
+						<p></p>
+   						<a href="Livres.html#pagetop">Haut de page</a>
+
+    			</div>
+    		<!--
+    			<div class="book">
+    					
+    				<h2 id="LArracheCoeur"><a href="Auteurs/Vian.html#LArracheCoeur" target="_blank"><em>L'Arrache-Coeur</em></a></h2>
+    				
+    					<a href="Livres/Covers/LArracheCoeur>.jpg" target="_blank"><img src="Livres/Covers/LArracheCoeur.jpg" alt="couverture du livre" title="Clique pour agrandir" width="150" height="150"></a>
+    				
+    					<p>par <a href="Auteurs/Vian.html" target="_blank"><strong>Vian</strong></a></p>
+    						
+						<p>Pages: 224</p>
+
+						<p>Synopsis: </p>
+			
+						<p>
+    							"Jacquemort, psychiatre, arrive chez Angel et Clémentine, celle ci étant sur le point d'accoucher. Jacquemort va l'aider à mettre au monde trois garçons : des jumeaux, Noël et Joël et « un isolé », Citroën. Angel, le mari délaissé, n'a pas le droit de voir ni d'assister à cet accouchement. Ce n'est qu'après que Clémentine lui redonnera sa liberté paternelle. Jacquemort s'installe ensuite chez eux et explique son projet à Angel : il veut psychanalyser les gens et se remplir de leurs pensées car il se sent 'vide' intérieurement.
+    					</p>
+    						
+    					<p>Prix: 5,90€</p>
+    						
+						<p>Année de parution: 1953</p>
+    				
+						<a href="RatingsPage.html" target="_blank">Donne ton avis sur ce livre/ Rate this book</a>
+    					<p></p>
+    					<a href="Livres.html#pagetop">Haut de page</a>
+
+    			</div>
+    					
+    			<div class="book">
+    			
+    				<h2 id="NotreDamedeParis"><a href="Auteurs/Hugo.html#NotreDamedeParis" target="_blank"><em>Notre Dame de Paris, 1482</em></a></h2>
+    				
+    					<a href="Livres/Covers/NotreDamedeParis.jpg" target="_blank"><img src="Livres/Covers/NotreDamedeParis.jpg" alt="couverture du livre" title="Cliquez pour agrandir" width="150" height="150"/></a>
+    				
+						<p>par <a href="Auteurs/Hugo.html" target="_blank"><strong>Hugo</strong></a></p>
+    		
+						<p>Pages: 733</p>
+    						
+    					<p>Synopsis: </p>
+    						
+    					<p>Dans Paris, une jeune gitane, Esméralda, danse sur le parvis de vaucanson. Sa beauté bouleverse l’archidiacre de Notre-Dame, qui tente de l'enlever.</p>
+    						
+						<p>Prix: 4,60€</p>
+    						
+						<p>Année de parution: 1831</p>
+    						
+    					<a href="RatingsPage.html" target="_blank">Donne ton avis sur ce livre/ Rate this book</a>
+    					<p></p>
+    					<a href="Livres.html#pagetop">Haut de page</a>
+				</div>
+   
+				<div class="book">
+
+					<h2 id="LesTravailleursdelaMer"><a href="Auteurs/Hugo.html#LesTravailleursdelaMer" target="_blank"><em>Les Travailleurs de la Mer</em></a></h2>
+    		
+					<a href="Livres/Covers/LesTravailleursdelaMer.jpg"><img src="Livres/Covers/LesTravailleursdelaMer.jpg" alt="couverture du livre" title="Cliquez pour agrandir" width="150" height="150"/></a>
+    				
+    						<p>par <a href="Auteurs/Hugo.html" target="_blank"><strong>Hugo</strong></a></p>
+    				
+    						<p>Pages: 674</p>
+    						
+    						<p>Synopsis: </p>
+    				
+    						<p>
+    							Pour pouvoir reconstruire un nouveau bateau à vapeur après le naufrage de La Durande, il faudrait sauver la précieuse machine du navire dont le constructeur est mort. Donc qu'un homme seul, matelot mais aussi forgeron, ait l'audace de se risquer plusieurs jours jusqu'aux rochers Douvres où repose l'épave.
+    						</p>
+
+    						<p>Prix: 7,50€</p>
+    						
+    						<p>Année de parution: 1866</p>
+    						
+    						<a href="RatingsPage.html" target="_blank">Donne ton avis sur ce livre/ Rate this book</a>
+    						<p></p>
+    						<a href="Livres.html#pagetop">Haut de page</a>
+
+    			
+    				</div>
+
+    				<div class="book">	
+    				
+    					<h2 id="LaTresse"><a href="Auteurs/Colombani.html#LaTresse" target="_blank"><em>La Tresse</em></a></h2>
+    		
+    						<a href="Livres/Covers/LaTresse.jpeg"><img src="Livres/Covers/LaTresse.jpeg" alt="couverture du livre" title="Cliquez pour agrandir" width="150" height="150" /></a>
+
+    						<p>par <a href="Auteurs/Colombani.html" target="_blank"><strong>Colombani</strong></a></p>
+    				
+    						<p>Pages: 240</p>
+    					
+    						<p>Synopsis: </p>
+    						
+    						<p>Le roman suit trois femmes dans leur lutte contre les discriminations et leur quête d’émancipation.</p>
+    						
+    						<p>Prix: 7,40€</p>
+    						
+    						<p>Année de parution: 2017</p>
+    			
+							<a href="RatingsPage.html" target="_blank">Donne ton avis sur ce livre/ Rate this book</a>
+							<p></p>
+							<a href="Livres.html#pagetop">Haut de page</a>
+
+    				</div>
+
+    				<div class="book">
+    			
+    					<h2 id="IllusionsPerdues"><a href="Auteurs/Balzac.html#IllusionsPerdues" target="_blank"><em>Illusions Perdues</em></a></h2>
+
+    						<a href="Livres/Covers/IllusionsPerdues.jpeg" target="_blank"><img src="Livres/Covers/IllusionsPerdues.jpeg" alt="couverture du livre" title="Clique pour agrandir" width="150" height="150"></a>
+    			
+    						<p>par <a href="Auteurs/Balzac.html" target="_blank"><strong>Balzac</strong></a></p>
+    			
+    						<p>Pages: 445</p>
+    			
+    						<p>Synopsis: </p>
+    			
+    						<p>
+    							L’action se déroule sous la Restauration. Le roman peint les milieux de l'imprimerie et des cercles littéraires. Il raconte les illusions perdues de Lucien Chardon, qui préfère se faire appeler du nom noble de sa mère, Rubempré. Lucien de Rubempré est un jeune provincial cultivé qui monte à Paris pour devenir écrivain. Mais, devant les difficultés, il se lance dans le journalisme et y connaît un certain succès. Son revirement monarchiste cause sa ruine. De retour à Angoulême, il essaie d'obtenir l'appui de son ami imprimeur, David Séchard. Mais ce dernier, à qui des concurrents tentent de voler un procédé de fabrication du papier, est emprisonné à cause de Lucien. Rubempré veut se suicider, mais il en est empêché par un prêtre qui, en échange de sa servilité totale, lui donne l'argent pour délivrer son ami.
+    						</p>
+    					
+    						<p>Prix: 3,00€</p>
+    					
+    						<p>Année de parution: 1835</p>
+    					
+    						<a href="RatingsPage.html" target="_blank">Donne ton avis sur ce livre/ Rate this book</a>
+    						<p></p>
+    						<a href="Livres.html#pagetop">Haut de page</a>
+
+    				
+    				</div>
+    				-->
+    			
+    		</div>
+    	
+    	</body>
+	</html>

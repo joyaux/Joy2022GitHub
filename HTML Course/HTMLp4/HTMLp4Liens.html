@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Créer des liens</title>
+    </head>
+<!-- In part 4 we learn how to make links - to www addresses/other sites, and links to other pages we create, in same folder, sub folder/s or parent folder -->
+    <body>
+        <p>Bonjour. Vous souhaitez visiter <a href="https://openclassrooms.com">OpenClassrooms</a> ?<br />
+        C'est un bon site ;o)</p>
+
+        <p>Bonjour. Souhaitez-vous consulter <a href="Page2.html">la page 2</a> ?</p>
+
+<!-- if subfolder: -->
+        <a href="contenu/page2.html">
+<!-- if several sub folders: -->
+        <a href="contenu/autredossier/page2.html">
+<!-- if parent folder - plus haut: -->
+        <a href="../page2.html">
+
+<!-- Ancre - point de repère when page is super long, link sends you to another location on the page-->
+        <h2 id="mon_ancre">Titre</h2>
+
+        <a href="#mon_ancre">Aller vers l'ancre</a>
+        <p></p>
+        <p></p>
+        <h1>Ma grande page</h1>
+
+        <p>
+    Aller directement à la partie traitant de :<br />
+        <a href="#cuisine">La cuisine</a><br />
+        <a href="#rollers">Les rollers</a><br />
+        <a href="#arc">Le tir à l'arc</a><br />
+       </p>
+    <h2 id="cuisine">La cuisine</h2>
+
+    <p>... (beaucoup de texte) ...</p>
+
+    <h2 id="rollers">Les rollers</h2>
+
+    <p>... (beaucoup de texte) ...</p>
+
+    <h2 id="arc">Le tir à l'arc</h2>
+
+    <p>... (beaucoup de texte) ...</p>
+<p></p>
+<p></p>
+<!-- When you want to create a link that leads to an anchor in another page -->
+    <h1>Le Mégamix</h1>
+    <p>
+    Rendez-vous quelque part sur une autre page :<br />
+    <a href="ancres.html#cuisine">La cuisine</a><br />
+    <a href="ancres.html#rollers">Les rollers</a><br />
+    <a href="ancres.html#arc">Le tir à l'arc</a><br />
+    <!-- The above links lead back to the anchors in the page in previous example-->
+    </p>
+<!-- Links that show info when you hover - affiche une infobulle au survol-->
+    <p>Bonjour. Souhaitez-vous visiter <a href="https://openclassrooms.com" title="Vous ne le regretterez pas !">OpenClassrooms</a> ?</p>
+    <p></p>
+
+<!-- Links that open a new window - ouvre une nouvelle fenêtre-->
+    <p>Bonjour. Souhaitez-vous visiter <a href="https://openclassrooms.com" title="Vous ne le regretterez pas !" target="_blank">OpenClassrooms</a> ? </p> 
+<!-- Links that send un e-mail-->
+    <p><a href="mailto:votrenom@bidule.com">Envoyez-moi un e-mail !</a></p>
+<!-- Links for downloading a file -->
+    <p><p><a href="monfichier.zip">Télécharger le fichier</a></p></p>
+    
+    </body>
+</html>

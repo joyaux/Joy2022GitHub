@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="icon" href="images/terre.png">
+    <title>Home Page</title>
+</head>
+
+<body>
+    <!-- Appel des APIs -->
+    <?php include("appelApi.php"); ?>
+
+    <!-- Barre de navigation -->
+    <?php include("navbar.php"); ?>
+
+    <!-- Introduction -->
+    <h1>Les espèces maritimes</h1>
+    <p>Ut eu dolore incididunt magna ex cillum aliquip dolor dolore aliqua non exercitation proident. Deserunt deserunt pariatur et officia
+        cillum cillum culpa deserunt irure nulla voluptate. Lorem reprehenderit esse veniam id. Irure incididunt irure exercitation aute
+        fugiat occaecat ut. Dolor ex excepteur officia mollit dolor consequat pariatur. Anim reprehenderit est ex duis reprehenderit ad
+        excepteur eiusmod ipsum culpa.</p>
+
+
+    <?php
+
+    // Boucle pour générer chaques paragraphes en récupérant les données depuis l'API
+    foreach ($array_especes as $espece) {
+        echo ('<h2>Les ' . htmlspecialchars($espece["nom"]) . '</h2>
+            <ul>
+                <li>Description : ' . htmlspecialchars($espece["description"]) . '</li>
+                <li>Caracteristiques : ');
+
+        // Verifie si la liste des caracteristiques est vide ou s'il ne s'agit pas d'un tableau et gère les deux cas
+        if (count($espece["caracteristique"]) == 0 || gettype($espece["caracteristique"]) != "array") {
+            echo ("Il n'y a pas de caracteristiques");
+        } else {
+            foreach ($espece["caracteristique"] as $caracteristique) {
+                echo (htmlspecialchars($caracteristique) . ", ");
+            }
+        }
+
+        echo ('</li></ul>
+            <select id="' . htmlspecialchars($espece["nom"]) . '" class="select" onchange="getSelectValue(' . htmlspecialchars(json_encode($espece)) . ', ' . htmlspecialchars($json_string_poisson) . ')">
+                <option value="nothing">---- Veuillez sélectionner un choix ----</option>');
+
+        foreach ($array_poissons as $poisson) {
+            if ($poisson['type'] == $espece['id']) {
+                echo ('<option value="' . htmlspecialchars($poisson['id']) . '">' . htmlspecialchars($poisson['nom']) . '</option>');
+            }
+        }
+
+        echo ('</select>
+            <section id="' . htmlspecialchars($espece["id"]) .'" class="ajoutJS"></section>');
+    }
+    ?>
+
+    <!-- Planisphère interactif -->
+    <h2>Planisphère interactif</h2>
+    <div class="planisphere" id="plan">
+        <div class="infobulle">
+            <img src="images/infobulle.png" alt="Infobulle">
+            <div class="rectangle">
+                <a href="information.php#orque"><img src="images/orque.jpg" alt="Orque"></a>
+            </div>
+        </div>
+        <img src="images/planisphere.png" alt="Planisphere">
+    </div>
+
+    <script src="JS/app.js"></script>
+
+</body>
+</html>
